@@ -10,3 +10,19 @@
 
 //saida
 // = informar o resultado do jogo de futebol
+
+let time1 = prompt("Digite o nome do primeiro time:");
+let time2 = prompt("Digite o nome do segundo time:");
+let placarTime1 = parseInt(prompt(`Digite o placar de ${time1}:`));
+let placarTime2 = parseInt(prompt(`Digite o placar de ${time2}:`));
+
+
+if (placarTime1 === placarTime2) {
+    console.log("O jogo entre ${time1} vs ${time2} empatou!");
+
+} else if (placarTime1 > placarTime2) {
+    console.log(`O ${time1} venceu o jogo!`);
+
+} else {
+    console.log(`O ${time2} venceu o jogo!`);
+}

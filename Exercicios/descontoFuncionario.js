@@ -15,3 +15,40 @@
 // = se for cliente não haverá desconto
 // = se for funcionário terá 10% de desconto
 // = se for vip terá 5% de desconto
+
+let desconto = 0;
+let compra = 100;
+let cliente = 3;
+
+
+const codCliente = parseInt(prompt("Digite o código do cliente (1 para cliente, 2 para funcionário, 3 para VIP):"));
+const valorCompra = parseFloat(prompt("Digite o valor total da compra:"));
+
+switch (codCliente) {
+
+    case 1: 
+        cliente = "cliente"
+        console.log(`Olá ${cliente}!, você não tem descontos nas compras total a pagar: R$ ${compra}`)
+        break;
+
+    case 2:
+        cliente = "funcionário"
+        desconto = 0.1 *  compra
+        console.log(`Olá ${cliente}!, você ganhou 10% de desconto no total da sua compra com ${desconto}% de desconto: R$ ${compra}`)
+        break;
+
+    case 3: 
+        desconto = 0.05 *  compra ;
+        compra = compra - desconto
+        console.log(`Olá ${cliente}!, você ganhou 5% de desconto no total da sua compra com ${desconto}% de desconto: R$ ${compra}`)
+        break;
+        break;
+    default:
+        
+        break;
+}
+
+
+const valorComDesconto = valorCompra - (valorCompra * desconto);
+
+console.log(`O valor total da compra com desconto é: R$${valorComDesconto.toFixed(2)}`);

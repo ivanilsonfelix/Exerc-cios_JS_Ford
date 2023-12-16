@@ -24,3 +24,43 @@
 
 //saida de dados
 // = mostrar a porcentagem de desconto se for alcool ou se for gasolina
+
+
+const tipoCombustivel = prompt("Digite o tipo de combustível (A para álcool, G para gasolina):").toUpperCase();
+const litrosVendidos = parseFloat(prompt("Digite a quantidade de litros vendidos:"));
+
+const precoAlcool = 4.90;
+const precoGasolina = 5.30;
+
+let desconto = 0;
+let precoTotal = 0;
+
+
+switch (tipoCombustivel) {
+    case 'A':
+        if (litrosVendidos <= 20) {
+            desconto = 3;
+        } else {
+            desconto = 5;
+        }
+        precoTotal = litrosVendidos * (precoAlcool - (precoAlcool * (desconto / 100)));
+        break;
+
+    case 'G':
+        if (litrosVendidos <= 20) {
+            desconto = 4;
+        } else {
+            desconto = 6;
+        }
+        precoTotal = litrosVendidos * (precoGasolina - (precoGasolina * (desconto / 100)));
+        break;
+
+    default:
+        console.log("Tipo de combustível inválido.");
+        break;
+}
+
+if (precoTotal > 0) {
+    console.log(`O valor a ser pago é R$ ${precoTotal.toFixed(2)} com ${desconto}% de desconto.`);
+    alert("Obrigado, volte sempre!");
+}
