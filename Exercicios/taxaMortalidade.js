@@ -16,3 +16,29 @@
 
 //saída de dados
 // imprimir na tela a taxa de mortalidade ou natalidade
+
+
+var escolhaUsuario = prompt("Digite 'natalidade' ou 'mortalidade' para calcular:");
+switch (escolhaUsuario) {
+        
+    case 'natalidade':
+        var numeroCriancasNascidas = parseInt(prompt("Digite o número de crianças nascidas:"));
+        var numeroHabitantesNatalidade = parseInt(prompt("Digite o número de habitantes:"));
+
+        var taxaNatalidade = (numeroCriancasNascidas * 1000) / numeroHabitantesNatalidade;
+
+        console.log("A taxa de natalidade é: " + taxaNatalidade.toFixed(2));
+        break;
+
+    case 'mortalidade':
+        var numeroObitos = parseInt(prompt("Digite o número de óbitos:"));
+        var numeroHabitantesMortalidade = parseInt(prompt("Digite o número de habitantes:"));
+        
+        var taxaMortalidade = (numeroObitos * 1000) / numeroHabitantesMortalidade;
+
+        console.log("A taxa de mortalidade é: " + taxaMortalidade.toFixed(2));
+        break;
+
+    default:
+        console.log("Escolha inválida. Digite 'natalidade' ou 'mortalidade'.");
+}
